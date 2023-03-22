@@ -16,6 +16,9 @@ services:
 
   dashboard:
     image: dashboard
+    environment:
+      - MONGO_URI=mongodb://admin:password@mongodb:27017/test?authSource=admin&readPreference=primary&ssl=false
+      - MONGO_DATABASE=demo
     networks:
       - api_network
 
